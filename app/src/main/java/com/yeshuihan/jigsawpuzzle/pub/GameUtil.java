@@ -33,7 +33,7 @@ public class GameUtil {
         }
     }
 
-    private static boolean canSolve(List<Integer> data) {
+    public static boolean canSolve(List<Integer> data) {
         int blankId=GameUtil.mBlankItemBean.getmItemId();
         if(data.size()%2==1){
             return getInversions(data)%2==0;
@@ -46,7 +46,7 @@ public class GameUtil {
         }
     }
 
-    private static int getInversions(List<Integer> data) {
+    public static int getInversions(List<Integer> data) {
         int inversions=0;
         int inversionCount=0;
         for(int i=0;i<data.size();i++){
@@ -63,7 +63,7 @@ public class GameUtil {
         return inversions;
     }
 
-    private static void swapItems(ItemBean from, ItemBean blank) {
+    public static void swapItems(ItemBean from, ItemBean blank) {
         ItemBean tempItemBean=new ItemBean();
         tempItemBean.setmBitmapId(from.getmBitmapId());
         from.setmBitmapId(blank.getmBitmapId());

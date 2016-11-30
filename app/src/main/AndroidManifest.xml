@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PuzzleMain"/>
+        <activity android:name=".PuzzleMain"
+            android:launchMode="singleTask"/>
     </application>
 
 </manifest>

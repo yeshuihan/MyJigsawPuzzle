@@ -20,6 +20,7 @@ public class ImagesUtil {
 
 
     public void creatInitBitmap(int type, Bitmap picSelectd, Context context){
+        GameUtil.mItemBeans.clear();
         Bitmap bitmap=null;
         List<Bitmap> bitmapItems=new ArrayList<Bitmap>();
         int itemWidth=picSelectd.getWidth()/type;
@@ -28,7 +29,7 @@ public class ImagesUtil {
             for(int j=1;j<=type;j++) {
                 bitmap = Bitmap.createBitmap(picSelectd, (j - 1) * itemWidth, (i - 1) * itemHeight, itemWidth, itemHeight);
                 bitmapItems.add(bitmap);
-                itemBean = new ItemBean((j - 1) * itemWidth, (i - 1) * itemHeight, bitmap);
+                itemBean = new ItemBean((i - 1) * type+j, (i - 1) * type+j, bitmap);
                 GameUtil.mItemBeans.add(itemBean);
             }
 
@@ -37,7 +38,8 @@ public class ImagesUtil {
         bitmapItems.remove(type*type-1);
         GameUtil.mItemBeans.remove(type*type-1);
         Bitmap blankBitmap= BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher);
-        blankBitmap=Bitmap.createBitmap(blankBitmap,0,0,blankBitmap.getWidth(),blankBitmap.getHeight());
+        blankBitmap=Bitmap.createScaledBitmap(blankBitmap,PuzzleMain.mLastBitmap.getWidth(),PuzzleMain.mLastBitmap.getHeight(),true);
+
         bitmapItems.add(blankBitmap);
         GameUtil.mItemBeans.add(new ItemBean(type*type,0,blankBitmap));
         GameUtil.mBlankItemBean=GameUtil.mItemBeans.get(type*type-1);

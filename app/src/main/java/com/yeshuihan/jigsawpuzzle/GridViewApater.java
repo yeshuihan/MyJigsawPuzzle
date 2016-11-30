@@ -9,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.yeshuihan.jigsawpuzzle.pub.ScreenUtil;
 
 import java.util.List;
 
@@ -40,7 +39,7 @@ public class GridViewApater extends BaseAdapter {
 
         if(converView==null){
             iv_pic_item=new ImageView(mContext);
-            iv_pic_item.setLayoutParams(new GridView.LayoutParams(300,530));
+            iv_pic_item.setLayoutParams(new GridView.LayoutParams(picList.get(position).getWidth(),picList.get(position).getHeight()));
             iv_pic_item.setScaleType(ImageView.ScaleType.FIT_XY);
         }else{
             iv_pic_item=(ImageView)converView;
