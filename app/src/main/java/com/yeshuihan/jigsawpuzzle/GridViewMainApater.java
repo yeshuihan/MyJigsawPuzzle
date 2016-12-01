@@ -40,7 +40,7 @@ public class GridViewMainApater extends BaseAdapter {
         int density=(int) ScreenUtil.getDeviceDensity(mContext);
         if(converView==null){
             iv_pic_item=new ImageView(mContext);
-            iv_pic_item.setLayoutParams(new GridView.LayoutParams(85*density,135*density));
+            iv_pic_item.setLayoutParams(new GridView.LayoutParams(72*density,112*density));
             iv_pic_item.setScaleType(ImageView.ScaleType.FIT_XY);
         }else{
             iv_pic_item=(ImageView)converView;

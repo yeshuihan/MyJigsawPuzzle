@@ -3,7 +3,7 @@
 <item android:state_pressed="true">
     <shape android:shape="rectangle">
         <!-- 填充颜色-->
-        <solid android:color="#33444444"/>
+        <solid android:color="@color/chartreuse"/>
         <!--圆角-->
         <corners android:radius="5dp"/>
 
@@ -15,12 +15,13 @@
 </item>
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="@color/title_color"/>
+            <solid android:color="@color/deepskyblue"/>
             <corners android:radius="5dp"/>
             <padding android:bottom="10dp"
                 android:top="10dp"
                 android:right="10dp"
                 android:left="10dp"/>
+
         </shape>
     </item>
 </selector>

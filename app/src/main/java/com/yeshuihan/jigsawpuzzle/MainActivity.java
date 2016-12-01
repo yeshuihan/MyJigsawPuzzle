@@ -143,15 +143,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Type
             case R.id.tv_main_type_2:
                 mType = 2;
-                mTvSelected.setText("2 X 2");
+                mTvSelected.setText("当前难度：2 X 2");
                 break;
             case R.id.tv_main_type_3:
                 mType = 3;
-                mTvSelected.setText("3 X 3");
+                mTvSelected.setText("当前难度：3 X 3");
                 break;
             case R.id.tv_main_type_4:
                 mType = 4;
-                mTvSelected.setText("4 X 4");
+                mTvSelected.setText("当前难度：4 X 4");
                 break;
             default:
                 break;
@@ -188,15 +188,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void popupShow(View view){
         int density=(int ) ScreenUtil.getDeviceDensity(this);
-        mPopupWindow=new PopupWindow(mPopupView,200*density,50*density);
+        Log.i("ysh",mPopupView.getWidth()+"");
+        mPopupWindow=new PopupWindow(mPopupView,120*density,150*density);
         mPopupWindow.setFocusable(true);
         mPopupWindow.setOutsideTouchable(true);
         Drawable transpent=new ColorDrawable(Color.TRANSPARENT);
         mPopupWindow.setBackgroundDrawable(transpent);
 
         int [] location=new int[2];
-        view.getLocationOnScreen(location);
-        mPopupWindow.showAtLocation(view, Gravity.NO_GRAVITY,location[0]-40*density,location[1]+30*density);
+        //view.getLocationOnScreen(location);
+        mPopupWindow.showAsDropDown(view,0,2);
     }
     public void showDialogCustom(){
         AlertDialog.Builder builder=new AlertDialog.Builder(this);

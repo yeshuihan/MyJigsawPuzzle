@@ -4,4 +4,32 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="title_color">#335566</color>
+    <color name="yellow">#FFFF00</color><!--黄色 -->
+    <color name="ivory">#FFFFF0</color><!--象牙色 -->
+    <color name="orangered">#FF4500</color><!--红橙色 -->
+    <color name="red">#FF0000</color><!--红色 -->
+    <color name="goldenrod">#DAA520</color><!--金麒麟色 -->
+    <color name="greenyellow">#ADFF2F</color><!--黄绿色 -->
+    <color name="palegreen">#98FB98</color><!--苍绿色 -->
+    <color name="chartreuse">#7FFF00</color><!--黄绿色 -->
+    <color name="lawngreen">#7CFC00</color><!--草绿色 -->
+    <color name="mediumturquoise">#48D1CC</color><!--中绿宝石-->
+    <color name="turquoise">#40E0D0</color><!--青绿色 -->
+
+    <color name="mediumseagreen">#3CB371</color><!--中海蓝 -->
+
+    <color name="limegreen">#32CD32</color><!--橙绿色 -->
+    <color name="aqua">#00FFFF</color><!--浅绿色 -->
+
+    <color name="cyan">#00FFFF</color><!--青色 -->
+
+    <color name="springgreen">#00FF7F</color><!--春绿色 -->
+
+    <color name="lime">#00FF00</color><!--酸橙色 -->
+
+    <color name="mediumspringgreen">#00FA9A</color><!--中春绿色 -->
+
+    <color name="darkturquoise">#00CED1</color><!--暗宝石绿 -->
+
+    <color name="deepskyblue">#00BFFF</color><!--深天蓝色 -->
 </resources>
