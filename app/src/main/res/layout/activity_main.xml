@@ -17,8 +17,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:text="大家一起来拼图"
             android:gravity="center"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/chartreuse"
+            android:textSize="20sp"
             android:layout_gravity="center"/>
         <TextView
             android:id="@+id/selected"

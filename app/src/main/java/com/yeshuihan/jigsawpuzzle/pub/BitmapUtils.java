@@ -38,4 +38,13 @@ public class BitmapUtils {
         opts.inJustDecodeBounds=false;
         return createScaleBitmap(BitmapFactory.decodeResource(res,resId,opts),reqW,reqH);
     }
+
+    public static Bitmap decodeSampledBitmapFromFile(String str,int reqW,int reqH){
+        BitmapFactory.Options opts=new BitmapFactory.Options();
+        opts.inJustDecodeBounds=true;
+        BitmapFactory.decodeFile(str,opts);
+        opts.inSampleSize=computeSampleSize(opts,reqW,reqH);
+        opts.inJustDecodeBounds=false;
+        return createScaleBitmap(BitmapFactory.decodeFile(str,opts),reqW,reqH);
+    }
 }

@@ -1,6 +1,7 @@
 package com.yeshuihan.jigsawpuzzle;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mTvSelected;
     private LayoutInflater mLayoutInflater;
     private TextView mTvType2,mTvType3,mTvType4;
+    private ProgressDialog mProgressDialog;
     private int mType=3;
     private static String TEMP_IMAGE_PATH=Environment.getExternalStorageDirectory().getPath()+"/temp.png";
 
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void handleMessage(Message msg) {
             if(msg.what==1){
+                mProgressDialog.dismiss();
                 mGvPicLIst.setAdapter(new GridViewMainApater(MainActivity.this,mPicList));
             }
 
@@ -113,9 +116,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTvType2.setOnClickListener(this);
         mTvType3.setOnClickListener(this);
         mTvType4.setOnClickListener(this);
-
+        showProgressDialog();
     }
 
+    private void  showProgressDialog(){
+        mProgressDialog=new ProgressDialog(this);
+        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        mProgressDialog.setMessage("图片加载中...");
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.show();
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -189,14 +199,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void popupShow(View view){
         int density=(int ) ScreenUtil.getDeviceDensity(this);
         Log.i("ysh",mPopupView.getWidth()+"");
-        mPopupWindow=new PopupWindow(mPopupView,120*density,150*density);
-        mPopupWindow.setFocusable(true);
+        mPopupWindow=new PopupWindow(mPopupView,150*density,150*density);
+        mPopupWindow.setFocusable(false);
         mPopupWindow.setOutsideTouchable(true);
         Drawable transpent=new ColorDrawable(Color.TRANSPARENT);
         mPopupWindow.setBackgroundDrawable(transpent);
 
-        int [] location=new int[2];
-        //view.getLocationOnScreen(location);
         mPopupWindow.showAsDropDown(view,0,2);
     }
     public void showDialogCustom(){
